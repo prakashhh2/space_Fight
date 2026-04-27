@@ -27,31 +27,15 @@ tasks.withType<JavaCompile> {
 
 application {
     mainModule.set("com.example.spacefight")
-    mainClass.set("com.example.spacefight.HelloApplication")
+    mainClass.set("com.example.spacefight.Launcher")
 }
 
 javafx {
     version = "21.0.6"
-    modules = listOf("javafx.controls", "javafx.fxml", "javafx.web", "javafx.swing" , "javafx.media")
+    modules = listOf("javafx.controls", "javafx.fxml", "javafx.graphics")
 }
 
 dependencies {
-    implementation("org.controlsfx:controlsfx:11.2.1")
-    implementation("com.dlsc.formsfx:formsfx-core:11.6.0") {
-      exclude(group = "org.openjfx")
-    }
-    implementation("net.synedra:validatorfx:0.6.1") {
-      exclude(group = "org.openjfx")
-    }
-    implementation("org.kordamp.ikonli:ikonli-javafx:12.3.1")
-    implementation("org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0")
-    implementation("eu.hansolo:tilesfx:21.0.9") {
-        exclude(group = "org.openjfx")
-    }
-    implementation("com.github.almasb:fxgl:17.3") {
-        exclude(group = "org.openjfx")
-        exclude(group = "org.jetbrains.kotlin")
-    }
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
